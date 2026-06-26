@@ -8,7 +8,7 @@ def format_linter_error(error: dict) -> dict:
         "column": error["column_number"],
         "message": error["text"],
         "name": error["code"],
-        "source": "flake8"
+        "source": "flake8",
     }
 
 
