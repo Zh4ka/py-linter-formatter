@@ -12,7 +12,8 @@ def format_linter_error(error: dict) -> dict:
     }
 
 
-def format_single_linter_file(file_path: str, errors: list) -> dict[str, list[dict] | str]:
+def format_single_linter_file(file_path: str, errors: list) \
+        -> dict[str, list[dict] | str]:
     return {
         "errors": [format_linter_error(mes_errors) for mes_errors in errors],
         "path": file_path,
@@ -21,4 +22,7 @@ def format_single_linter_file(file_path: str, errors: list) -> dict[str, list[di
 
 
 def format_linter_report(linter_report: dict) -> list:
-    return [format_single_linter_file(file_name ,mes_error) for file_name, mes_error in linter_report.items()]
+    return [
+        format_single_linter_file(file_name, mes_error)
+        for file_name, mes_error in linter_report.items()
+    ]
