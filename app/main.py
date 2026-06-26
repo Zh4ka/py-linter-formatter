@@ -1,5 +1,3 @@
-from os import name
-from typing import Any
 
 
 def format_linter_error(error: dict) -> dict:
